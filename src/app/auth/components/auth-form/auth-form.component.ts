@@ -9,6 +9,8 @@ import { ValidatorsService } from 'src/app/shared/validators/validators.service'
 export class AuthFormComponent {
   @Input() title!: string;
 
+  @Input() isRegister!: boolean;
+
   public myForm: FormGroup = this.fb.group({
     name: ['', [Validators.required]],
     password: ['', [Validators.required]],
