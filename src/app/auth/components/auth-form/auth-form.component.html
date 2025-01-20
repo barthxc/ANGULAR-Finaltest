@@ -1,0 +1,27 @@
+<div>
+  <p-card header="Simple Card">
+    <form
+      [formGroup]="myForm"
+      (ngSubmit)="onSubmit()"
+      autocomplete="off"
+      class="flex flex-column gap-4"
+    >
+      <div class="flex flex-column">
+        <label for="name">Username</label>
+        <input formControlName="name" pInputText />
+        <span class="text-red-400" *ngIf="isValidField('name')"
+          >Campo incorrecto</span
+        >
+      </div>
+      <div class="flex flex-column">
+        <label for="password">Contraseña</label>
+        <p-password formControlName="password" [feedback]="true" />
+        <span class="text-red-400" *ngIf="isValidField('password')"
+          >Campo incorrecto</span
+        >
+      </div>
+
+      <p-button type="submit" label="Submit" />
+    </form>
+  </p-card>
+</div>
